@@ -90,20 +90,6 @@ class ScreenOne extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom:
-                100, // Adjust this value to position the icon above the Bottom Bar
-            left: MediaQuery.of(context).size.width / 2 -
-                25, // Center the icon horizontally
-            child: IconButton(
-              icon: Icon(Icons.navigate_next,
-                  size: 50), // Replace with your icon and size
-              onPressed: () {
-                Navigator.pushNamed(
-                    context, ScreenTwo.routeName); // Navigate to ScreenTwo
-              },
-            ),
-          ),
         ],
       ),
     );
