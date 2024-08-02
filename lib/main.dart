@@ -1,4 +1,5 @@
-import 'package:c11_exam_sun_online/home_screen.dart';
+import 'package:c11_exam_sun_online/screen_one.dart';
+import 'package:c11_exam_sun_online/screen_two.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          useMaterial3: false
-      ),
-      home: HomeScreen(),
+      theme: ThemeData(useMaterial3: false),
+      routes: {
+        ScreenOne.routeName: (context) => const ScreenOne(),
+        ScreenTwo.routeName: (context) => const ScreenTwo(),
+      },
+      initialRoute: ScreenOne.routeName,
     );
   }
 }

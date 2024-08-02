@@ -1,7 +1,9 @@
+import 'package:c11_exam_sun_online/screen_two.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ScreenOne extends StatelessWidget {
+  static const String routeName = "screen_one";
+  const ScreenOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,20 @@ class HomeScreen extends StatelessWidget {
             "assets/images/Homepage.png",
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.next_plan_sharp,
+              size: 30,
+              color: Colors.blue,
+            ), // Replace with your icon and size
+            onPressed: () {
+              Navigator.pushNamed(
+                  context, ScreenTwo.routeName); // Navigate to ScreenTwo
+            },
+          ),
+          SizedBox(width: 55), // Add spacing between the icon and the edge
+        ],
       ),
       body: Stack(
         children: [
@@ -72,6 +88,20 @@ class HomeScreen extends StatelessWidget {
                 "assets/images/Bottom Bar.png",
                 fit: BoxFit.cover,
               ),
+            ),
+          ),
+          Positioned(
+            bottom:
+                100, // Adjust this value to position the icon above the Bottom Bar
+            left: MediaQuery.of(context).size.width / 2 -
+                25, // Center the icon horizontally
+            child: IconButton(
+              icon: Icon(Icons.navigate_next,
+                  size: 50), // Replace with your icon and size
+              onPressed: () {
+                Navigator.pushNamed(
+                    context, ScreenTwo.routeName); // Navigate to ScreenTwo
+              },
             ),
           ),
         ],
